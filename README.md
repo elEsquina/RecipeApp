@@ -1,7 +1,7 @@
 # projetfinal
 
 ## Logins for ADMIN: 
-## It's nessecary to add recipes otherwise the button won't show up!!
+## It's nessecary for adding recipes otherwise the button won't show up!!
 ```
 Email : o.yes@gmail.com
 Mot de passe : 123456
