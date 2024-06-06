@@ -1,5 +1,15 @@
 # projetfinal
 
+## Logins for ADMIN: 
+## It's nessecary to add recipes otherwise the button won't show up!!
+```
+Email : o.yes@gmail.com
+Mot de passe : 123456
+```
+
+## Link:
+https://finalspd1.web.app/
+
 ## Project setup
 ```
 npm install
