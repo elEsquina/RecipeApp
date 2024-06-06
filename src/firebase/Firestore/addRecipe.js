@@ -15,15 +15,23 @@ const addRecipe = async (uid, data) => {
 
 }
 
-const deleteRecipe = async (recipeID) => {
+const deleteRecipe = async (uid, recipeID) => {
   const RecipeRef = projectFirestore.collection('recipes').doc(recipeID);
 
   try {
       await RecipeRef.delete();
+
+      const usersRef = projectFirestore.collection('users').doc(uid);
+      const user = await usersRef.get();
+      const currentRecipes = user.data().recipes || [];
+      const updatedRecipes = currentRecipes.filter(id => id !== recipeID);
+      await usersRef.update({ recipes: updatedRecipes });
+
   } catch (error) {
       console.error('Error deleting recipe:', error);
   }
 };
+
 
 const UpdateRecipe = async (recipeID, data) => {
   const RecipeRef = projectFirestore.collection('recipes').doc(recipeID);
