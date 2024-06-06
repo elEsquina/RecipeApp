@@ -77,7 +77,7 @@
     },
     methods: {
       async deleting() {
-        await deleteRecipe(this.$route.params.id);
+        await deleteRecipe(this.recipe.authorID ,this.$route.params.id);
         this.$router.push('/recipes');
       },
       async addComment() {
